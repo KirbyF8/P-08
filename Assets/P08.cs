@@ -33,7 +33,7 @@ public class P08 : MonoBehaviour
         while (contador < 11)
         {
 
-            exercise01.text = $"Exercise 01: {suma}";
+            exercise01.text = $"Exercise 01:\r\n {suma}";
             yield return new WaitForSeconds(1f);
             contador++;
             suma = suma + contador;
