@@ -9,11 +9,15 @@ public class P08 : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI exercise01;
     [SerializeField] private TextMeshProUGUI exercise02;
+    [SerializeField] private TextMeshProUGUI exercise03;
+
 
     private int contador;
     private int cuentaAtras = 10;
     private int suma;
     private string bottle = "bottles";
+
+    private string exercise3 = "I like videogames";
 
 
     void Start()
@@ -21,7 +25,7 @@ public class P08 : MonoBehaviour
 
         StartCoroutine(Exercise01());
         StartCoroutine(Exercise02());
-
+        StartCoroutine(Exercise03());
     }
 
     private IEnumerator Exercise01()
@@ -71,4 +75,13 @@ public class P08 : MonoBehaviour
         
     }
    
+    private IEnumerator Exercise03()
+    {
+        exercise03.text = $"Exercise 03:\r\n";
+        foreach (char c in exercise3)
+        {
+            exercise03.text += c;
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
 }
